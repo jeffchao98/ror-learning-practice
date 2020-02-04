@@ -1,3 +1,4 @@
+<%= paginate @events %>
 <ul>
 <% @events.each do |event| %>
   <li>
@@ -8,4 +9,5 @@
   </li>
 <% end %>
 </ul>
+<%= paginate @events %>
 <%= link_to 'New Event', :controller => 'events', :action => 'new' %>

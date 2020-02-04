@@ -33,6 +33,10 @@ class EventsController < ApplicationController
         redirect_to :action => :index
     end
 
+    def index
+        @events = Event.page(params[:page]).per(5)
+    end
+    
     private
       
     def event_params
