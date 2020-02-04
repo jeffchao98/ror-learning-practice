@@ -7,6 +7,7 @@ class EventsController < ApplicationController
         @event = Event.new
     end
     def create
+        flash[:notice] = "event was successfully created"
         @event = Event.new(event_params)
         if @event.save
             redirect_to :action => :index
@@ -19,6 +20,7 @@ class EventsController < ApplicationController
     def edit
     end
     def update
+        flash[:notice] = "event was successfully updated"
         if @event.update(event_params)
             redirect_to :action => :show, :id => @event
         else
@@ -26,6 +28,7 @@ class EventsController < ApplicationController
         end
     end
     def destroy
+        flash[:alert] = "event was successfully deleted"
         @event.destroy
         redirect_to :action => :index
     end
