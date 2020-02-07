@@ -5,6 +5,10 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person.all
+
+    respond_to do |format|
+      format.json { render json: :ok }
+    end 
   end
 
   # GET /people/1
